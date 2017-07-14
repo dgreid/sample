@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Floor` struct in crate `sample`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Floor">
+
+    <title>sample::interpolate::Floor - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Floor</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>sample</a>::<wbr><a href='index.html'>interpolate</a></p><script>window.sidebarCurrent = {name: 'Floor', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>sample</a>::<wbr><a href='index.html'>interpolate</a>::<wbr><a class="struct" href=''>Floor</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/sample/interpolate.rs.html#29-32' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Floor&lt;F&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Interpolator that just rounds off any values to the previous value from the source</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;F&gt; <a class="struct" href="../../sample/interpolate/struct.Floor.html" title="struct sample::interpolate::Floor">Floor</a>&lt;F&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/sample/interpolate.rs.html#175-191' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(left: F) -&gt; <a class="struct" href="../../sample/interpolate/struct.Floor.html" title="struct sample::interpolate::Floor">Floor</a>&lt;F&gt;</code></span></h4>
+<div class='docblock'><p>Create a new Floor Interpolator.</p>
+</div><h4 id='method.from_source' class="method"><span id='from_source.v' class='invisible'><code>fn <a href='#method.from_source' class='fnname'>from_source</a>&lt;S&gt;(source: &amp;mut S) -&gt; <a class="struct" href="../../sample/interpolate/struct.Floor.html" title="struct sample::interpolate::Floor">Floor</a>&lt;F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../sample/signal/trait.Signal.html" title="trait sample::signal::Signal">Signal</a>&lt;Frame = F&gt;,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Consumes the first value from a given source in order to initialize itself. If the source
+has no values at all, this will return None.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;F&gt; <a class="trait" href="../../sample/interpolate/trait.Interpolator.html" title="trait sample::interpolate::Interpolator">Interpolator</a> for <a class="struct" href="../../sample/interpolate/struct.Floor.html" title="struct sample::interpolate::Floor">Floor</a>&lt;F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;F as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a>: <a class="trait" href="../../sample/conv/trait.Duplex.html" title="trait sample::conv::Duplex">Duplex</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/sample/interpolate.rs.html#259-272' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Frame' class="type"><span id='Frame.t' class='invisible'><code>type <a href='../../sample/interpolate/trait.Interpolator.html#associatedtype.Frame' class="type">Frame</a> = F</code></span></h4>
+<h4 id='method.interpolate' class="method"><span id='interpolate.v' class='invisible'><code>fn <a href='../../sample/interpolate/trait.Interpolator.html#tymethod.interpolate' class='fnname'>interpolate</a>(&amp;self, _x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; Self::<a class="type" href="../../sample/interpolate/trait.Interpolator.html#associatedtype.Frame" title="type sample::interpolate::Interpolator::Frame">Frame</a></code></span></h4>
+<div class='docblock'><p>Given a distance between [0.0 and 1.0) to the following sample, return the interpolated value. <a href="../../sample/interpolate/trait.Interpolator.html#tymethod.interpolate">Read more</a></p>
+</div><h4 id='method.next_source_frame' class="method"><span id='next_source_frame.v' class='invisible'><code>fn <a href='../../sample/interpolate/trait.Interpolator.html#tymethod.next_source_frame' class='fnname'>next_source_frame</a>(&amp;mut self, source_frame: Self::<a class="type" href="../../sample/interpolate/trait.Interpolator.html#associatedtype.Frame" title="type sample::interpolate::Interpolator::Frame">Frame</a>)</code></span></h4>
+<div class='docblock'><p>Called whenever the Interpolator value steps passed 1.0.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "sample";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

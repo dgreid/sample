@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Equilibrium` struct in crate `sample`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Equilibrium">
+
+    <title>sample::signal::Equilibrium - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Equilibrium</p><div class="block items"><ul><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>sample</a>::<wbr><a href='index.html'>signal</a></p><script>window.sidebarCurrent = {name: 'Equilibrium', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>sample</a>::<wbr><a href='index.html'>signal</a>::<wbr><a class="struct" href=''>Equilibrium</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/sample/signal.rs.html#506-508' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Equilibrium&lt;F&gt; { /* fields omitted */ }</pre><div class='docblock'><p>An iterator that endlessly yields <code>Frame</code>s of type <code>F</code> at equilibrium.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../sample/signal/struct.Equilibrium.html" title="struct sample::signal::Equilibrium">Equilibrium</a>&lt;F&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/sample/signal.rs.html#505' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../sample/signal/struct.Equilibrium.html" title="struct sample::signal::Equilibrium">Equilibrium</a>&lt;F&gt;</code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;F&gt; <a class="trait" href="../../sample/signal/trait.Signal.html" title="trait sample::signal::Signal">Signal</a> for <a class="struct" href="../../sample/signal/struct.Equilibrium.html" title="struct sample::signal::Equilibrium">Equilibrium</a>&lt;F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/sample/signal.rs.html#1099-1107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Frame' class="type"><span id='Frame.t' class='invisible'><code>type <a href='../../sample/signal/trait.Signal.html#associatedtype.Frame' class="type">Frame</a> = F</code></span></h4>
+<div class='docblock'><p>The <code>Frame</code> type returned by the <code>Signal</code>.</p>
+</div><h4 id='method.next' class="method"><span id='next.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#tymethod.next' class='fnname'>next</a>(&amp;mut self) -&gt; Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a></code></span></h4>
+<div class='docblock'><p>Yield the next <code>Frame</code> in the <code>Signal</code>. <a href="../../sample/signal/trait.Signal.html#tymethod.next">Read more</a></p>
+</div><h4 id='method.add_amp' class="method"><span id='add_amp.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.add_amp' class='fnname'>add_amp</a>&lt;S&gt;(self, other: S) -&gt; <a class="struct" href="../../sample/signal/struct.AddAmp.html" title="struct sample::signal::AddAmp">AddAmp</a>&lt;Self, S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../sample/signal/trait.Signal.html" title="trait sample::signal::Signal">Signal</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;S::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a>: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&lt;Sample = &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Signed" title="type sample::Sample::Signed">Signed</a>, NumChannels = &lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.NumChannels" title="type sample::frame::Frame::NumChannels">NumChannels</a>&gt;,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Provides an iterator that yields the sum of the frames yielded by both <code>other</code> and <code>self</code> in lock-step. <a href="../../sample/signal/trait.Signal.html#method.add_amp">Read more</a></p>
+</div><h4 id='method.mul_amp' class="method"><span id='mul_amp.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.mul_amp' class='fnname'>mul_amp</a>&lt;S&gt;(self, other: S) -&gt; <a class="struct" href="../../sample/signal/struct.MulAmp.html" title="struct sample::signal::MulAmp">MulAmp</a>&lt;Self, S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../sample/signal/trait.Signal.html" title="trait sample::signal::Signal">Signal</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;S::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a>: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&lt;Sample = &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Float" title="type sample::Sample::Float">Float</a>, NumChannels = &lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.NumChannels" title="type sample::frame::Frame::NumChannels">NumChannels</a>&gt;,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Provides an iterator that yields the product of the frames yielded by both <code>other</code> and <code>self</code> in lock-step. <a href="../../sample/signal/trait.Signal.html#method.mul_amp">Read more</a></p>
+</div><h4 id='method.offset_amp' class="method"><span id='offset_amp.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.offset_amp' class='fnname'>offset_amp</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;offset: &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Signed" title="type sample::Sample::Signed">Signed</a><br>) -&gt; <a class="struct" href="../../sample/signal/struct.OffsetAmp.html" title="struct sample::signal::OffsetAmp">OffsetAmp</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Provides an iterator that offsets the amplitude of every channel in each frame of the signal by some sample value and yields the resulting frames. <a href="../../sample/signal/trait.Signal.html#method.offset_amp">Read more</a></p>
+</div><h4 id='method.scale_amp' class="method"><span id='scale_amp.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.scale_amp' class='fnname'>scale_amp</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;amp: &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Float" title="type sample::Sample::Float">Float</a><br>) -&gt; <a class="struct" href="../../sample/signal/struct.ScaleAmp.html" title="struct sample::signal::ScaleAmp">ScaleAmp</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Produces an <code>Iterator</code> that scales the amplitude of the sample of each channel in every <code>Frame</code> yielded by <code>self</code> by the given amplitude. <a href="../../sample/signal/trait.Signal.html#method.scale_amp">Read more</a></p>
+</div><h4 id='method.offset_amp_per_channel' class="method"><span id='offset_amp_per_channel.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.offset_amp_per_channel' class='fnname'>offset_amp_per_channel</a>&lt;F&gt;(self, amp_frame: F) -&gt; <a class="struct" href="../../sample/signal/struct.OffsetAmpPerChannel.html" title="struct sample::signal::OffsetAmpPerChannel">OffsetAmpPerChannel</a>&lt;Self, F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&lt;Sample = &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Signed" title="type sample::Sample::Signed">Signed</a>, NumChannels = &lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.NumChannels" title="type sample::frame::Frame::NumChannels">NumChannels</a>&gt;,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Produces a new <code>Signal</code> that offsets the amplitude of every <code>Frame</code> in <code>self</code> by the respective amplitudes in each channel of the given <code>amp_frame</code>. <a href="../../sample/signal/trait.Signal.html#method.offset_amp_per_channel">Read more</a></p>
+</div><h4 id='method.scale_amp_per_channel' class="method"><span id='scale_amp_per_channel.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.scale_amp_per_channel' class='fnname'>scale_amp_per_channel</a>&lt;F&gt;(self, amp_frame: F) -&gt; <a class="struct" href="../../sample/signal/struct.ScaleAmpPerChannel.html" title="struct sample::signal::ScaleAmpPerChannel">ScaleAmpPerChannel</a>&lt;Self, F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&lt;Sample = &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Float" title="type sample::Sample::Float">Float</a>, NumChannels = &lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.NumChannels" title="type sample::frame::Frame::NumChannels">NumChannels</a>&gt;,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Produces a new <code>Signal</code> that scales the amplitude of every <code>Frame</code> in <code>self</code> by the respective amplitudes in each channel of the given <code>amp_frame</code>. <a href="../../sample/signal/trait.Signal.html#method.scale_amp_per_channel">Read more</a></p>
+</div><h4 id='method.mul_hz' class="method"><span id='mul_hz.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.mul_hz' class='fnname'>mul_hz</a>&lt;M, I&gt;(self, interpolator: I, mul_per_frame: M) -&gt; <a class="struct" href="../../sample/signal/struct.MulHz.html" title="struct sample::signal::MulHz">MulHz</a>&lt;Self, M, I&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;M: <a class="trait" href="../../sample/signal/trait.Signal.html" title="trait sample::signal::Signal">Signal</a>&lt;Frame = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1]</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../../sample/interpolate/trait.Interpolator.html" title="trait sample::interpolate::Interpolator">Interpolator</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Multiplies the rate at which frames of <code>self</code> are yielded by the given <code>signal</code>. <a href="../../sample/signal/trait.Signal.html#method.mul_hz">Read more</a></p>
+</div><h4 id='method.from_hz_to_hz' class="method"><span id='from_hz_to_hz.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.from_hz_to_hz' class='fnname'>from_hz_to_hz</a>&lt;I&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;interpolator: I, <br>&nbsp;&nbsp;&nbsp;&nbsp;source_hz: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;target_hz: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a><br>) -&gt; <a class="struct" href="../../sample/interpolate/struct.Converter.html" title="struct sample::interpolate::Converter">Converter</a>&lt;Self, I&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../../sample/interpolate/trait.Interpolator.html" title="trait sample::interpolate::Interpolator">Interpolator</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Converts the rate at which frames of the <code>Signal</code> are yielded using interpolation. <a href="../../sample/signal/trait.Signal.html#method.from_hz_to_hz">Read more</a></p>
+</div><h4 id='method.scale_hz' class="method"><span id='scale_hz.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.scale_hz' class='fnname'>scale_hz</a>&lt;I&gt;(self, interpolator: I, multi: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="struct" href="../../sample/interpolate/struct.Converter.html" title="struct sample::interpolate::Converter">Converter</a>&lt;Self, I&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../../sample/interpolate/trait.Interpolator.html" title="trait sample::interpolate::Interpolator">Interpolator</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Multiplies the rate at which frames of the <code>Signal</code> are yielded by the given value. <a href="../../sample/signal/trait.Signal.html#method.scale_hz">Read more</a></p>
+</div><h4 id='method.delay' class="method"><span id='delay.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.delay' class='fnname'>delay</a>(self, n_frames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="struct" href="../../sample/signal/struct.Delay.html" title="struct sample::signal::Delay">Delay</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Delays the <code>Signal</code> by the given number of frames. <a href="../../sample/signal/trait.Signal.html#method.delay">Read more</a></p>
+</div><h4 id='method.into_interleaved_samples' class="method"><span id='into_interleaved_samples.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.into_interleaved_samples' class='fnname'>into_interleaved_samples</a>(self) -&gt; <a class="struct" href="../../sample/signal/struct.IntoInterleavedSamples.html" title="struct sample::signal::IntoInterleavedSamples">IntoInterleavedSamples</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Converts a <code>Signal</code> into a type that yields the interleaved <code>Sample</code>s. <a href="../../sample/signal/trait.Signal.html#method.into_interleaved_samples">Read more</a></p>
+</div><h4 id='method.clip_amp' class="method"><span id='clip_amp.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.clip_amp' class='fnname'>clip_amp</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;thresh: &lt;&lt;Self::<a class="type" href="../../sample/signal/trait.Signal.html#associatedtype.Frame" title="type sample::signal::Signal::Frame">Frame</a> as <a class="trait" href="../../sample/frame/trait.Frame.html" title="trait sample::frame::Frame">Frame</a>&gt;::<a class="type" href="../../sample/frame/trait.Frame.html#associatedtype.Sample" title="type sample::frame::Frame::Sample">Sample</a> as <a class="trait" href="../../sample/trait.Sample.html" title="trait sample::Sample">Sample</a>&gt;::<a class="type" href="../../sample/trait.Sample.html#associatedtype.Signed" title="type sample::Sample::Signed">Signed</a><br>) -&gt; <a class="struct" href="../../sample/signal/struct.ClipAmp.html" title="struct sample::signal::ClipAmp">ClipAmp</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Clips the amplitude of each channel in each <code>Frame</code> yielded by <code>self</code> to the given threshold amplitude. <a href="../../sample/signal/trait.Signal.html#method.clip_amp">Read more</a></p>
+</div><h4 id='method.bus' class="method"><span id='bus.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.bus' class='fnname'>bus</a>(self) -&gt; <a class="struct" href="../../sample/signal/struct.Bus.html" title="struct sample::signal::Bus">Bus</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Moves the <code>Signal</code> into a <code>Bus</code> from which its output may be divided into multiple other <code>Signal</code>s in the form of <code>Output</code>s. <a href="../../sample/signal/trait.Signal.html#method.bus">Read more</a></p>
+</div><h4 id='method.take' class="method"><span id='take.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.take' class='fnname'>take</a>(self, n: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="struct" href="../../sample/signal/struct.Take.html" title="struct sample::signal::Take">Take</a>&lt;Self&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Converts the <code>Signal</code> into an <code>Iterator</code> that will yield the given number for <code>Frame</code>s before returning <code>None</code>. <a href="../../sample/signal/trait.Signal.html#method.take">Read more</a></p>
+</div><h4 id='method.by_ref' class="method"><span id='by_ref.v' class='invisible'><code>fn <a href='../../sample/signal/trait.Signal.html#method.by_ref' class='fnname'>by_ref</a>(&amp;mut self) -&gt; &amp;mut Self</code></span></h4>
+<div class='docblock'><p>Borrows a Signal rather than consuming it. <a href="../../sample/signal/trait.Signal.html#method.by_ref">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "sample";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
