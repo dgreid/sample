@@ -357,6 +357,30 @@ pub trait Sample: Copy + Clone + PartialOrd + PartialEq {
         (self_s + amp).to_sample()
     }
 
+    /// subtracts (or "offsets") the amplitude of the `Sample` by the given signed amplitude.
+    ///
+    /// `Self` will be converted to `Self::Signed`, the subtraction will occur and then the result
+    /// will be converted back to `Self`. These conversions allow us to correctly handle the
+    /// addition of unsigned signal formats.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// extern crate sample;
+    ///
+    /// use sample::Sample;
+    ///
+    /// fn main() {
+    ///     assert_eq!(0.25.sub_amp(0.5), -0.25);
+    ///     assert_eq!(0u8.sub_amp(-128), 128);
+    /// }
+    /// ```
+    #[inline]
+    fn sub_amp(self, amp: Self::Signed) -> Self {
+        let self_s = self.to_signed_sample();
+        (self_s - amp).to_sample()
+    }
+
     /// Multiplies (or "scales") the amplitude of the `Sample` by the given float amplitude.
     ///
     /// - `amp` > 1.0 amplifies the sample.
@@ -385,6 +409,35 @@ pub trait Sample: Copy + Clone + PartialOrd + PartialEq {
     fn mul_amp(self, amp: Self::Float) -> Self {
         let self_f = self.to_float_sample();
         (self_f * amp).to_sample()
+    }
+
+    /// Divides the amplitude of the `Sample` by the given float value.
+    ///
+    /// - `amp` < 1.0 amplifies the sample.
+    /// - `amp` > 1.0 attenuates the sample.
+    /// - `amp` == 1.0 yields the same sample.
+    /// - `amp` == 0.0 is division by zero.
+    ///
+    /// `Self` will be converted to `Self::Float`, the division will occur and then the
+    /// result will be converted back to `Self`. These conversions allow us to correctly handle the
+    /// division of integral signal formats.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// extern crate sample;
+    ///
+    /// use sample::Sample;
+    ///
+    /// fn main() {
+    ///     assert_eq!(64_i8.div_amp(2.0), 32);
+    ///     assert_eq!(0.5.div_amp(-0.5), -1.0);
+    /// }
+    /// ```
+    #[inline]
+    fn div_amp(self, amp: Self::Float) -> Self {
+        let self_f = self.to_float_sample();
+        (self_f / amp).to_sample()
     }
 }
 

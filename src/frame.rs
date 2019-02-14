@@ -215,6 +215,29 @@ pub trait Frame: Copy + Clone + PartialEq {
         self.zip_map(other, Sample::add_amp)
     }
 
+    /// Subtracts each channel in `other` from each channel in `self` and returns the resulting
+    /// `Frame`.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// extern crate sample;
+    ///
+    /// use sample::Frame;
+    ///
+    /// fn main() {
+    ///     let foo = [0.75, 0.5].sub_amp([1.25, -0.25]);
+    ///     assert_eq!(foo, [-0.5, 0.75]);
+    /// }
+    /// ```
+    #[inline]
+    fn sub_amp<F>(self, other: F) -> Self
+    where
+        F: Frame<Sample = <Self::Sample as Sample>::Signed, NumChannels = Self::NumChannels>,
+    {
+        self.zip_map(other, Sample::sub_amp)
+    }
+
     /// Multiplies `other` with `self` and returns the resulting `Frame`.
     ///
     /// # Example
@@ -238,6 +261,52 @@ pub trait Frame: Copy + Clone + PartialEq {
         F: Frame<Sample = <Self::Sample as Sample>::Float, NumChannels = Self::NumChannels>,
     {
         self.zip_map(other, Sample::mul_amp)
+    }
+
+    /// Divides `self` by `other` and returns the resulting `Frame`.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// extern crate sample;
+    ///
+    /// use sample::Frame;
+    ///
+    /// fn main() {
+    ///     let foo = [0.25, 0.1].div_amp([0.5, 0.25]);
+    ///     assert_eq!(foo, [0.5, 0.4]);
+    /// }
+    /// ```
+    #[inline]
+    fn div_amp<F>(self, other: F) -> Self
+    where
+        F: Frame<Sample = <Self::Sample as Sample>::Float, NumChannels = Self::NumChannels>,
+    {
+        self.zip_map(other, Sample::div_amp)
+    }
+
+    /// Divides each `Sample` in the `Frame` by the given `divisor` and returns the resulting
+    /// `Frame`.
+    ///
+    /// - A < 1.0 amplifies the sample.
+    /// - A > 1.0 attenuates the sample.
+    /// - A == 1.0 yields the same sample.
+    /// - A == 0.0 is division by zero.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// extern crate sample;
+    ///
+    /// use sample::Frame;
+    ///
+    /// fn main() {
+    ///     assert_eq!([0.1, 0.2, -0.1, -0.2].div_scalar(0.5), [0.2, 0.4, -0.2, -0.4]);
+    /// }
+    /// ```
+    #[inline]
+    fn div_scalar(self, divisor: <Self::Sample as Sample>::Float) -> Self {
+        self.map(|s| s.div_amp(divisor))
     }
 }
 
