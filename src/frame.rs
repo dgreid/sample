@@ -77,6 +77,10 @@ pub trait Frame: Copy + Clone + PartialEq {
     /// Yields a mutable reference to the `Sample` of the channel at the `idx` if there is one.
     fn channel_mut(&mut self, idx: usize) -> Option<&mut Self::Sample>;
 
+    fn set_channel(&mut self, idx: usize, val: Self::Sample) {
+        self.channel_mut(idx).map(|s| *s = val);
+    }
+
     /// Returns a pointer to the sample of the channel at the given index, without doing bounds
     /// checking.
     ///
